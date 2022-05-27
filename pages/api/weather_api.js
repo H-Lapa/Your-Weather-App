@@ -2,7 +2,7 @@
 import axios from "axios";
 
 function getCurrentWeather (location) {
-  axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_WEATHER_API}`);
+  return axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.WEATHER_API}`);
 }
 
 export {
