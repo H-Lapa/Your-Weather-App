@@ -15,12 +15,11 @@ export default function Home() {
     await getCurrentWeather('London').then((res) => {
       console.log('this is res', res);
       console.log('this is arr', res.data.main.temp);
-      // arr.push(res);
       setWeather(res, ...weather);
     })
-    // setWeather(arr);
   }
   console.log(weather,'is the weather');
+  
   return (
     <div>
       {weather.length !== 0 ? (
@@ -32,6 +31,5 @@ export default function Home() {
         <h1>Hello, no weather</h1>
       )}
     </div>
-    
   )
 }
