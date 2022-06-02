@@ -6,7 +6,8 @@ const WeatherCard = ({obj}) => {
     return (
         <div>
             <div className={styles.card}>
-                <h1 > Temp: { obj.data.main.temp } </h1>
+                <h1>{obj.data.name}</h1>
+                <h1> Temp: { obj.data.main.temp } </h1>
                 <h2>Feels Like: {obj.data.main.feels_like }</h2>
 
                 <WeatherIcon code={obj.data.weather[0].icon} WeatherDesc={obj.data.weather[0].desciption} />
