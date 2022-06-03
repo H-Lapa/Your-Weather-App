@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import { getCurrentWeather } from './api/weather_api.js'
 import WeatherCard from '../components/weatherCard'
 import { useState, useEffect} from 'react'
+import SearchBar from '../components/SearchBar'
 
 export default function Home() {
   const [weather, setWeather] = useState([]);
@@ -24,7 +25,7 @@ export default function Home() {
     <div>
       {weather.length !== 0 ? (
         <>
-        <h1>Hello, {weather.data.main.temp}</h1>
+        <SearchBar/>
         <WeatherCard obj={weather} />
         </>
       ):(

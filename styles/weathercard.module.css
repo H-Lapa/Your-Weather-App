@@ -13,3 +13,50 @@
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
+.card * {
+    margin: 5pt;
+}
+
+.location {
+    font-weight: 600;
+    font-size: 18pt;
+    padding-right: 75pt;
+}
+
+.temp {
+    font-size: 40pt;
+    font-weight: 700;
+    margin-bottom: 0pt;
+    margin-right: 30pt;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.range {
+    margin-top: 12pt;
+}
+
+.feel {
+    font-size: 10pt;
+    margin: 0pt;
+    margin-left: 25pt;
+}
+
+.img {
+    width: 50%;
+    margin: 0pt;
+}
+
+.desc {
+    font-weight: 700;
+    font-size: 27pt;
+    margin-top: 0pt;
+}
+
+.wind {
+    font-size: 11pt;
+}
