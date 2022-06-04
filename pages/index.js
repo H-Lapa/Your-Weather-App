@@ -23,14 +23,20 @@ export default function Home() {
   
   return (
     <div>
+      <SearchBar/>
+      <div className={styles.gridContainer}>
       {weather.length !== 0 ? (
         <>
-        <SearchBar/>
+        <WeatherCard obj={weather} />
+        <WeatherCard obj={weather} />
+        <WeatherCard obj={weather} />
+        <WeatherCard obj={weather} />
         <WeatherCard obj={weather} />
         </>
       ):(
         <h1>Hello, no weather</h1>
       )}
+      </div>
     </div>
   )
 }

@@ -114,3 +114,13 @@
     flex-direction: column;
   }
 }
+
+
+/* mine starts from here */
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
