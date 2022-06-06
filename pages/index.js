@@ -7,17 +7,23 @@ import { useState, useEffect} from 'react'
 import SearchBar from '../components/SearchBar'
 
 export default function Home() {
+  const [city, setCity] = useState(['London', 'New York', 'Miami', 'Lisbon'])
   const [weather, setWeather] = useState([]);
   useEffect(() => {
     get();
   },[]);
   
   async function get(){
-    await getCurrentWeather('London').then((res) => {
-      console.log('this is res', res);
-      console.log('this is arr', res.data.main.temp);
-      setWeather(res, ...weather);
-    })
+    setWeather([]);
+    await city.map((element) => {
+      getCurrentWeather(element).then((res) => {
+        console.log('this is res', res);
+        // console.log('this is arr', res.data.main.temp);
+        setWeather(oldObj => [...oldObj, res]);
+        // console.log("this is weather", weather);
+      })
+    });
+    
   }
   console.log(weather,'is the weather');
   
@@ -25,17 +31,10 @@ export default function Home() {
     <div>
       <SearchBar/>
       <div className={styles.gridContainer}>
-      {weather.length !== 0 ? (
-        <>
-        <WeatherCard obj={weather} />
-        <WeatherCard obj={weather} />
-        <WeatherCard obj={weather} />
-        <WeatherCard obj={weather} />
-        <WeatherCard obj={weather} />
-        </>
-      ):(
-        <h1>Hello, no weather</h1>
-      )}
+      {weather.map((item) => {
+          return <WeatherCard obj={item} />
+        })
+      }
       </div>
     </div>
   )
