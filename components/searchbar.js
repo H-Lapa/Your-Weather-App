@@ -1,7 +1,21 @@
+import cities from 'cities.json';
+
 const SearchBar = () => {
     return (
         <div>
-            <input type="text" />
+            <div>
+                <input type="text" />
+                <button type="submit" ></button>
+            </div>
+
+            <div >
+                {cities.map((value) => {
+                    return (
+                        <p>{value.name}</p>
+                    )
+                })}
+
+            </div>
         </div>
     );
 }

@@ -1,5 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { getCurrentWeather } from './api/weather_api.js'
 import WeatherCard from '../components/weatherCard'
@@ -7,7 +5,7 @@ import { useState, useEffect} from 'react'
 import SearchBar from '../components/SearchBar'
 
 export default function Home() {
-  const [city, setCity] = useState(['London', 'New York', 'Miami', 'Lisbon'])
+  const [city, setCity] = useState(['London', 'New York', 'Miami', 'lisbon'])
   const [weather, setWeather] = useState([]);
   useEffect(() => {
     get();
