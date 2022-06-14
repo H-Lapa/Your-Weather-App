@@ -1,6 +1,6 @@
 import cities from 'cities.json';
 import { useState } from 'react';
-import styles from '../styles/Home.module.css'
+import styles from '../styles/searchBar.module.css'
 
 const SearchBar = () => {
     const [filteredData, setFilteredData] = useState([]);
@@ -27,9 +27,9 @@ const SearchBar = () => {
     };
 
     return (
-        <div>
+        <div >
 
-            <div>
+            <div className={styles.searchInputs}>
                 <input type="text" value={ text } onChange={handleChange} />
                 <button type="submit" ></button>
             </div>
@@ -39,7 +39,7 @@ const SearchBar = () => {
                     <div className={styles.dataResult}>
                         {filteredData.slice(0, 5).map((value) => {
                             return (
-                                <p>{value.name}</p>
+                                <p className={styles.dataItem} >{value.name}</p>
                             )
                         })};  
                     </div>
