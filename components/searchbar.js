@@ -21,6 +21,11 @@ const SearchBar = () => {
 
     };
 
+    function updateValue (e) {
+        // setText(e.target.value);
+        clearInput();
+    }
+
     const clearInput = () => {
         setFilteredData([]);
         setText('');
@@ -30,8 +35,8 @@ const SearchBar = () => {
         <div >
 
             <div className={styles.searchInputs}>
-                <input type="text" value={ text } onChange={handleChange} />
-                <button type="submit" ></button>
+                <input id='inputCity' type="text" value={ text } onChange={handleChange} />
+                <button type="submit" >Submit</button>
             </div>
 
             <div  >
@@ -39,7 +44,7 @@ const SearchBar = () => {
                     <div className={styles.dataResult}>
                         {filteredData.slice(0, 5).map((value) => {
                             return (
-                                <p className={styles.dataItem} >{value.name}</p>
+                                <a href='#' onClick={updateValue()} className={styles.dataItem} >{value.name}</a>
                             )
                         })};  
                     </div>
