@@ -21,9 +21,9 @@ const SearchBar = () => {
 
     };
 
-    function updateValue (e) {
-        // setText(e.target.value);
-        clearInput();
+    function updateValue (item) {
+        setText(item);
+        
     }
 
     const clearInput = () => {
@@ -44,7 +44,7 @@ const SearchBar = () => {
                     <div className={styles.dataResult}>
                         {filteredData.slice(0, 5).map((value) => {
                             return (
-                                <a href='#' onClick={updateValue()} className={styles.dataItem} >{value.name}</a>
+                                <a href='#' onClick={() => updateValue(value.name)} className={styles.dataItem} >{value.name}</a>
                             )
                         })};  
                     </div>
