@@ -2,7 +2,7 @@ import cities from 'cities.json';
 import { useState } from 'react';
 import styles from '../styles/searchBar.module.css'
 
-const SearchBar = () => {
+const SearchBar = ({data}) => {
     const [filteredData, setFilteredData] = useState([]);
     const [text, setText] = useState('');
 
@@ -23,7 +23,6 @@ const SearchBar = () => {
 
     function updateValue (item) {
         setText(item);
-        
     }
 
     const clearInput = () => {
@@ -31,12 +30,16 @@ const SearchBar = () => {
         setText('');
     };
 
+    function updateCities () {
+        data([text]);
+    }
+
     return (
         <div >
 
             <div className={styles.searchInputs}>
                 <input id='inputCity' type="text" value={ text } onChange={handleChange} />
-                <button type="submit" >Submit</button>
+                <button type="submit" onClick={updateCities}>Submit</button>
             </div>
 
             <div  >

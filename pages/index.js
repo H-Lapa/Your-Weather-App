@@ -7,9 +7,10 @@ import SearchBar from '../components/SearchBar'
 export default function Home() {
   const [city, setCity] = useState(['London', 'New York', 'Miami', 'lisbon'])
   const [weather, setWeather] = useState([]);
+
   useEffect(() => {
     get();
-  },[]);
+  },[city]);
   
   async function get(){
     setWeather([]);
@@ -27,7 +28,7 @@ export default function Home() {
   
   return (
     <div>
-      <SearchBar/>
+      <SearchBar data={setCity} />
       <div className={styles.gridContainer}>
       {weather.map((item) => {
           return <WeatherCard obj={item} />
