@@ -28,7 +28,7 @@ export default function Home() {
   
   return (
     <div>
-      <SearchBar data={setCity} />
+      <SearchBar data={setCity} city={city} />
       <div className={styles.gridContainer}>
       {weather.map((item) => {
           return <WeatherCard obj={item} />

@@ -2,7 +2,7 @@ import cities from 'cities.json';
 import { useState } from 'react';
 import styles from '../styles/searchBar.module.css'
 
-const SearchBar = ({data}) => {
+const SearchBar = ({data,  city}) => {
     const [filteredData, setFilteredData] = useState([]);
     const [text, setText] = useState('');
 
@@ -31,7 +31,7 @@ const SearchBar = ({data}) => {
     };
 
     function updateCities () {
-        data([text]);
+        data([...city, text]);
     }
 
     return (
